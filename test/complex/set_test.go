@@ -2,14 +2,14 @@ package complex
 
 import (
 	"fmt"
-	"github.com/bilibili/gengine/builder"
-	"github.com/bilibili/gengine/context"
-	"github.com/bilibili/gengine/engine"
+	"github.com/StevenChina/gengine/builder"
+	"github.com/StevenChina/gengine/context"
+	"github.com/StevenChina/gengine/engine"
 	"testing"
 	"time"
 )
 
-//求并集
+// 求并集
 func union(slice1, slice2 []string) []string {
 	m := make(map[string]int)
 	for _, v := range slice1 {
@@ -25,7 +25,7 @@ func union(slice1, slice2 []string) []string {
 	return slice1
 }
 
-//求交集
+// 求交集
 func intersect(slice1, slice2 []string) []string {
 	m := make(map[string]int)
 	nn := make([]string, 0)
@@ -42,7 +42,7 @@ func intersect(slice1, slice2 []string) []string {
 	return nn
 }
 
-//求差集
+// 求差集
 func difference(slice1, slice2 []string) []string {
 	m := make(map[string]int)
 	nn := make([]string, 0)

@@ -3,9 +3,9 @@ package test
 import (
 	"bytes"
 	"fmt"
-	"github.com/bilibili/gengine/builder"
-	"github.com/bilibili/gengine/context"
-	"github.com/bilibili/gengine/engine"
+	"github.com/StevenChina/gengine/builder"
+	"github.com/StevenChina/gengine/context"
+	"github.com/StevenChina/gengine/engine"
 	"io/ioutil"
 	"strconv"
 	"strings"

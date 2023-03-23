@@ -1,7 +1,7 @@
 package base
 
 import (
-	"github.com/bilibili/gengine/context"
+	"github.com/StevenChina/gengine/context"
 	"reflect"
 )
 
@@ -23,7 +23,7 @@ func (cons *Constant) AcceptInteger(i64 int64) error {
 	return nil
 }
 
-//receive rule's name
+// receive rule's name
 func (cons *Constant) AcceptName(name string) error {
 	cons.ConstantValue = reflect.ValueOf(name)
 	return nil
@@ -34,7 +34,7 @@ func (cons *Constant) AcceptId(id int64) error {
 	return nil
 }
 
-//receive rule's description
+// receive rule's description
 func (cons *Constant) AcceptDesc(desc string) error {
 	cons.ConstantValue = reflect.ValueOf(desc)
 	return nil

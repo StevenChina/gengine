@@ -2,11 +2,11 @@ package test
 
 import (
 	"fmt"
-	"github.com/bilibili/gengine/builder"
-	"github.com/bilibili/gengine/context"
-	"github.com/bilibili/gengine/internal/base"
-	parser "github.com/bilibili/gengine/internal/iantlr/alr"
-	"github.com/bilibili/gengine/internal/iparser"
+	"github.com/StevenChina/gengine/builder"
+	"github.com/StevenChina/gengine/context"
+	"github.com/StevenChina/gengine/internal/base"
+	parser "github.com/StevenChina/gengine/internal/iantlr/alr"
+	"github.com/StevenChina/gengine/internal/iparser"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"testing"
 )
@@ -62,7 +62,8 @@ func Test_base_msg(t *testing.T) {
 	}
 }
 
-/**
+/*
+*
 测试语法错误
 */
 func Test_err(t *testing.T) {

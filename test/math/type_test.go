@@ -2,15 +2,15 @@ package math
 
 import (
 	"fmt"
-	"github.com/bilibili/gengine/builder"
-	"github.com/bilibili/gengine/context"
-	"github.com/bilibili/gengine/engine"
+	"github.com/StevenChina/gengine/builder"
+	"github.com/StevenChina/gengine/context"
+	"github.com/StevenChina/gengine/engine"
 	"testing"
 	"time"
 )
 
 // in golang
-//-------- just not want to lost data, if the transformation will not lose data, it will transfer success ,else it will be failed  -------------------------
+// -------- just not want to lost data, if the transformation will not lose data, it will transfer success ,else it will be failed  -------------------------
 func Test_Type(t *testing.T) {
 
 	//right
@@ -56,7 +56,6 @@ func Test_Type(t *testing.T) {
 
 }
 
-//
 type IntNum struct {
 	Int   int
 	Int8  int8

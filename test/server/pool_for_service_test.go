@@ -2,11 +2,11 @@ package server
 
 import (
 	"fmt"
-	"github.com/bilibili/gengine/engine"
+	"github.com/StevenChina/gengine/engine"
 	"testing"
 )
 
-//业务规则
+// 业务规则
 const service_rules string = `
 rule "1" "1"
 begin
@@ -21,7 +21,7 @@ begin
 end
 `
 
-//业务接口
+// 业务接口
 type MyService struct {
 	//gengine pool
 	Pool *engine.GenginePool
@@ -29,21 +29,21 @@ type MyService struct {
 	//other params
 }
 
-//request
+// request
 type Request struct {
 	Rid       int64
 	RuleNames []string
 	//other params
 }
 
-//resp
+// resp
 type Response struct {
 	At  int64
 	Num int64
 	//other params
 }
 
-//特定的场景服务
+// 特定的场景服务
 type Room struct {
 }
 
@@ -57,8 +57,8 @@ func (r *Room) GetNum( /*params*/ ) int64 {
 	return 111
 }
 
-//初始化业务服务
-//apiOuter这里最好仅注入一些无状态函数，方便应用中的状态管理
+// 初始化业务服务
+// apiOuter这里最好仅注入一些无状态函数，方便应用中的状态管理
 func NewMyService(poolMinLen, poolMaxLen int64, em int, rulesStr string, apiOuter map[string]interface{}) *MyService {
 	pool, e := engine.NewGenginePool(poolMinLen, poolMaxLen, em, rulesStr, apiOuter)
 	if e != nil {
@@ -69,14 +69,14 @@ func NewMyService(poolMinLen, poolMaxLen int64, em int, rulesStr string, apiOute
 	return myService
 }
 
-//和规则控制相关的API，直接包装pool API即可，如规则更新:
+// 和规则控制相关的API，直接包装pool API即可，如规则更新:
 func (ms *MyService) UpdateRules(ruleString string) error {
 	return ms.Pool.UpdatePooledRules(ruleString)
 }
 
 //....
 
-//service
+// service
 func (ms *MyService) Service(req *Request) (*Response, error) {
 
 	resp := &Response{}
@@ -99,7 +99,7 @@ func (ms *MyService) Service(req *Request) (*Response, error) {
 	return resp, nil
 }
 
-//模拟调用
+// 模拟调用
 func Test_run(t *testing.T) {
 
 	//初始化
